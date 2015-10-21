@@ -121,8 +121,8 @@ require_brew homebrew/dupes/screen
 require_brew tig
 require_brew tree
 require_brew ttyrec
-# better, more recent vim
-require_brew vim --override-system-vi
+# better, more recent vim--override-system-vi
+require_brew vim 
 require_brew watch
 # Install wget with IRI support
 require_brew wget --enable-iri
