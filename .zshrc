@@ -95,9 +95,37 @@ alias clear_log='sudo rm -rf /private/var/log/asl/*.asl'
 # Mac get stuck very often and are extremely slow and unstable on shutdowns.
 # This forces a shutdown.
 alias poweroff='sudo /sbin/shutdown -h now'
+alias reboot='sudo /sbin/reboot'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+#########  System ##########
+# -p: make any parent dirs, -v: help find a typo
+alias mkdir="mkdir -pv"
+# -c: flag in order to continue the download in case of problems
+alias wget="wget -c"
+# handy shortcuts #
+alias h='history'
+# -i: flag forces the user confirm before it happen if something wrong.
+alias rm="rm -i"
+alias cp="cp -i"
+# See most used commands in history
+alias tophistory="history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10"
+alias c='clear'
+
+#### Set of commands ###
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+alias today='date +"%T %d-%m-%Y"'
+
+## Control output of networking
+alias ping='ping -c 5'
+alias fastpiing='ping -c 20 -s.2'
 
 # Show folder as tree or simple: brew install tree :)
-#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#alias treee="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 #Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -110,3 +138,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 alias opentmux="tmux a || tmux"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/thinhphan/Library/Android/sdk/platform-tools:$PATH"
