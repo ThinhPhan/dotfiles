@@ -7,81 +7,72 @@ if has('vim_starting')
     set nocompatible
   endif
 
-  " NeoBundle Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  " set the runtime path to include Vundle and initialize
+	set rtp+=~/.vim/bundle/Vundle.vim
 endif
 
-" NeoBundle required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Vundle required:
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
  
 " TODO: Load plugins here (pathogen or vundle)
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+" How beauty Vim is
+Plugin 'bling/vim-airline'			    " Status bar color
+Plugin 'Yggdroot/indentLine'			" Show ident lines
+Plugin 'altercation/vim-colors-solarized'    " color theme
+"Plugin 'reedes/vim-thematic'                " Manage Vim's appearances
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'scrooloose/nerdtree'			    " File searching show folder tree
-NeoBundle 'kien/ctrlp.vim'				    " Fuzzy File searching
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'gregsexton/gitv'
-" NeoBundle 'SirVer/ultisnips'			    " Snippet to Github
-" NeoBundle 'Trevoke/ultisnips-rspec'
-" NeoBundle 'suan/vim-instant-markdown'	    " better looking statusline
-NeoBundle 'bling/vim-airline'			    " Status bar color
-NeoBundle 'tpope/vim-dispatch'			    " async external commands with output
-NeoBundle 'elzr/vim-json'				    " Syntax highlight for JSON
-NeoBundle 'nathanaelkane/vim-indent-guides'	" Visually displaying indent levels
-NeoBundle 'tpope/vim-surround'			    " manipulation of surrounding parens, quotes, etc.
-NeoBundle 'tpope/vim-endwise'               " add 'end' in ruby
-" git
-NeoBundle 'airblade/vim-gitgutter'		    " git diff in the gutter (sign column) and stages/reverts hunks
-NeoBundle 'junegunn/vim-easy-align'         " Alignment plugin.
+" Git
+Plugin 'airblade/vim-gitgutter'		    " git diff in the gutter (sign column) and stages/reverts
+Plugin 'tpope/vim-fugitive'             " Manage git actions
+Plugin 'junegunn/vim-easy-align'        " Alignment plugin.
 
 " Ruby/Rails
-NeoBundle 'vim-ruby/vim-ruby'               " ruby support
-NeoBundle 'tpope/vim-rails'				    " rails support
-NeoBundle 'tpope/vim-bundler'			    " bundler integration (e.g. :Bopen)
-NeoBundle 'tpope/vim-rake'				    " rake integration
-NeoBundle 'ecomba/vim-ruby-refactoring'	    " ruby refactoring
-NeoBundle 'josemarluedke/vim-rspec'		    " lightweight Rspec runner for Vim
+Plugin 'vim-ruby/vim-ruby'              " ruby support
+Plugin 'tpope/vim-rails'				" rails support
+Plugin 'tpope/vim-bundler'			    " bundler integration (e.g. :Bopen)
+Plugin 'tpope/vim-rake'				    " rake integration
+Plugin 'ecomba/vim-ruby-refactoring'	" ruby refactoring
+Plugin 'josemarluedke/vim-rspec'		" lightweight Rspec runner for Vim
+
+" Markdown
+Plugin 'plasticboy/vim-markdown'        " Syntax highlight for markdown
+Plugin 'godlygeek/tabular'				" Auto align things.
 
 " Syntax Support
-NeoBundle 'Valloric/YouCompleteMe'		    " Syntax completion
-NeoBundle 'scrooloose/syntastic'		    " Syntax checking
+Plugin 'Valloric/YouCompleteMe'		    " Syntax completion
+Plugin 'scrooloose/syntastic'		    " Syntax checking/linting
+Plugin 'tpope/vim-endwise'				" End certain structures automatically
+Plugin 'tpope/vim-commentary'			" Comment out lines, paragraph ..
+Plugin 'elzr/vim-json'				    " Syntax highlight for JSON
+Plugin 'tpope/vim-surround'				" Surroundings: parentheses, brackets, quote ...
+Plugin 'Raimondi/delimitMate'			" Auto close bracket, parentheses ...
 
 " Search
-NeoBundle 'rking/ag.vim'				    " Content searching
+Plugin 'scrooloose/nerdtree'			" File searching show folder tree
+Plugin 'rking/ag.vim'				    " Content searching
+Plugin 'kien/ctrlp.vim'				    " Fuzzy File searching
+Plugin 'Shougo/unite.vim'				" Search files interface
 
-" color themes
-NeoBundle 'altercation/vim-colors-solarized'
+" Others
+Plugin 'tpope/vim-dispatch'			    " async external commands with output
+Plugin 'Shougo/vimfiler.vim'
 
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+call vundle#end()            " required
 
-call neobundle#end()
-
-" Installation. check.
-NeoBundleCheck
 "----------------------------------------------------------------
-
 " Turn on syntax highlighting
 syntax on
  
-" NeoBundle Required - For plugins to load correctly
+" Vundle Required - For plugins to load correctly
 filetype plugin indent on
- 
-" TODO: Pick a leader key
-" let mapleader = ","
  
 " Security
 set modelines=0
@@ -91,8 +82,8 @@ set numberwidth=5   						" Number column width
 set ruler							 		" Show file stats
 set visualbell						 		" Blink cursor on error instead of beeping
 set hidden									" Allow hidden buffers
+set autowrite
 
-"set list listchars=tab:»·,trail:·,nbsp:·    " display extra whitespace
 set cursorline                              " highlight current line
 
 " Indent
@@ -150,19 +141,61 @@ vnoremap <F1> :set invfullscreen<CR>
 " custom mappings
 "----------------------------------------------------------------
 imap ;; <Esc>
+let mapleader = " "
 
-" Textmate holdouts
+" Copy selection to clipboard in visual mode
+vnoremap <leader>c "*y
+
+" Move to end of line in insert mode
+inoremap ,, <C-o>$
  
 " Formatting
 map <leader>q gqip
  
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>hh :bprevious<CR>
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>q :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <leader>a :ls<CR>
+" Toggle highlight search
+nmap <leader>p set hlsearch!<cr>
+" Add a new line without entering insert mode
+nmap <leader>n o<Esc>
+nmap <leader>N O<Esc>
+" Close syntastic location list
+nmap <leader>m :lclose<cr>
+
+" map j to gj and k to gk, so line navigation ignores line wrap
+nnoremap k gk
+nnoremap j gj
+nnoremap 0 g0
+nnoremap $ g$
+nnoremap ^ g^
+
+" split windows easier
+nnoremap <leader>w <C-W>v<C-W>l
+
+nnoremap <A-j> :m .+1<CR>==                                     " Move current line down
+nnoremap <A-k> :m .-2<CR>==                                     " Move current line up
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+
 " Visualize tabs and newlines
+"----------------------------------------------------------------
 set listchars=tab:▸\ ,eol:¬
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
+"----------------------------------------------------------------
 " Ctrl + S to save file
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
@@ -241,7 +274,7 @@ let g:gitgutter_escape_grep = 1
 let g:gitgutter_highlight_lines = 0
 "let g:gitgutter_realtime = 0
 
-" syntastic config
+" Syntastic config
 "----------------------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -268,4 +301,3 @@ let g:airline_powerline_fonts = 1
 let g:airline_exclude_preview = 1
 let g:airline#extensions#tabline#enabled = 1       " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t'   " Show just the filename
-
