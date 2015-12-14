@@ -29,11 +29,13 @@ require_cask vox-preferences-pane
 
 ###################################
 # Developer
+###################################
 
-# Dev Tools
+# Support Tools
 iterm2
 fabric
 tunnelblick
+flux
 
 # Editors
 sublime-text
@@ -42,11 +44,10 @@ require_apm linter
 require_apm linter-eslint
 require_apm atom-beautify
 mou
-# macvim
 
 # Versioning
 gitx
-sourcetree
+# sourcetree
 
 # Design
 # sketch
@@ -59,6 +60,9 @@ staruml
 android-studio
 genymotion
 virtualbox
+
+# Database
+robomongo
 )
 
 brew cask install "${apps[@]}"
