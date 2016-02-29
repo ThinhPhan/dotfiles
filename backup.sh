@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 # git pull origin master
 while read f; do
@@ -7,6 +7,6 @@ while read f; do
 done < Dotfiles
 echo "Backup files done, please commit!"
 
-# git add . -A
-# git commit -m "Backup at $(date)"
-# git push origin master
+git add . -A
+git commit -m "Backup at $(date)"
+git push origin master

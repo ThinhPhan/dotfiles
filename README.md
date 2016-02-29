@@ -7,7 +7,7 @@ Input dotfiles that you want to backup in 'Dotfiles'.
 Run backup
 
 `
-	$ ./backup.sh
+./backup.sh
 `
 
 ## Restore (Comming soon)
