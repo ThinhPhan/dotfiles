@@ -1,0 +1,99 @@
+db.getCollection("links").find()
+show dbs
+use demo
+show collections
+db.showCollections
+show collections
+show dbs
+use demo_db
+show collections
+db.getCollection("users").find()
+show dbs
+use luckydraw_vin2
+show collections
+show users
+show roles
+show database
+show dbs
+show collections
+db.collection.find()
+db.shows.find()
+db.shows.find(*)
+db.users.find()
+show dbs
+use luckydraw_vin
+ls
+show collections
+db.gifts.find()
+use luckydraw_vin2
+db.dropDatabase()
+use luckydraw_vin
+db.dropDatabase()
+show dbs
+show collections
+show dbs
+show database
+show databases
+use luckydraw_vin
+show collections
+db.users.find()
+show collections
+db.sessions.find()
+it
+db.sessions.find()
+it
+show dbs
+use luckydraw_vin
+show collections
+db.gifts.find( )
+db.gifts.find( )
+db.gifts.find()
+show collections
+db.events.findOne({active: true})
+db.gifts.find({eventID:57ed15439b49080ab62e6b41});
+db.gifts.find({eventID:57ed15439b49080ab62e6b41})
+db.gifts.find({eventID: '57ed15439b49080ab62e6b41'})
+show db
+db.show
+databases
+show dbs
+use luckydraw_vin
+db.system.profile.find()
+db.setProfilingLevel(1)
+db.setLogLevel(1)
+show databases
+use luckydraw_vin
+show collections
+events.find()
+db.events.find()
+db.sessions.find()
+db.gifts.find()
+db.sessions.find()
+db.gifts.find()
+db.gifts.update({}, {$rename: {availableGift:available}})
+db.gifts.update({}, {$rename: {availableGift:"available"}})
+db.gifts.find()
+db.gifts.update({}, {$rename: {availableGift:"available"}}, { multi: true })
+db.gifts.find()
+show databases
+use luckydraw_win
+db.runCommand({whatsmyuri : 1})
+show databases
+use luckydraw_vin
+show collections
+show collections
+collections
+collections.show
+show.collections
+collections
+collection
+db.show
+db
+show db
+db show
+show collections
+show databases
+use luckydraw_vin
+show databases
+use luckydraw_vin
+database

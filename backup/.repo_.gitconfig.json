@@ -1,0 +1,167 @@
+{
+  "difftool.sourcetree.path": [
+    ""
+  ], 
+  "core.exculdesfile": [
+    "/Users/thinhphan/.gitignore_global"
+  ], 
+  "core.editor": [
+    "vim"
+  ], 
+  "filter.lfs.clean": [
+    "git-lfs clean -- %f"
+  ], 
+  "alias.l2": [
+    "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+  ], 
+  "mergetool.sourcetree.cmd": [
+    "/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\""
+  ], 
+  "filter.lfs.process": [
+    "git-lfs filter-process"
+  ], 
+  "alias.l1": [
+    "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+  ], 
+  "apply.whitespace": [
+    "fix"
+  ], 
+  "alias.lg2": [
+    "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+  ], 
+  "alias.p": [
+    "!git pull; git submodule foreach git pull origin master"
+  ], 
+  "alias.s": [
+    "status -s"
+  ], 
+  "alias.lg1": [
+    "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+  ], 
+  "alias.amend": [
+    "commit --amend --reuse-message=HEAD"
+  ], 
+  "alias.listhistory": [
+    "log --name-status"
+  ], 
+  "color.ui": [
+    "auto"
+  ], 
+  "user.email": [
+    "vincent.phan@firstidea.vn"
+  ], 
+  "core.excludesfile": [
+    "/Users/thinhphan/.gitignore"
+  ], 
+  "alias.reb": [
+    "!r() { git rebase -i HEAD~$1; }; r"
+  ], 
+  "alias.redocommit": [
+    "reset --soft HEAD^"
+  ], 
+  "alias.c": [
+    "clone --recursive"
+  ], 
+  "alias.go": [
+    "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  ], 
+  "alias.d": [
+    "!git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  ], 
+  "alias.ca": [
+    "!git add -A && git commit -av"
+  ], 
+  "alias.busypeople": [
+    "shortlog -6"
+  ], 
+  "alias.fm": [
+    "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+  ], 
+  "alias.l": [
+    "log --pretty=oneline -n 20 --graph --date=short --abbrev-commit"
+  ], 
+  "user.name": [
+    "Thinh Phan"
+  ], 
+  "alias.lg": [
+    "log --graph"
+  ], 
+  "alias.who": [
+    "shortlog -s --"
+  ], 
+  "alias.ll": [
+    "log --stat -C -3"
+  ], 
+  "core.precomposeunicode": [
+    "false"
+  ], 
+  "diff.renames": [
+    "copies"
+  ], 
+  "mergetool.sourcetree.trustexitcode": [
+    "true"
+  ], 
+  "filter.lfs.smudge": [
+    "git-lfs smudge -- %f"
+  ], 
+  "alias.purgeme": [
+    "!git clean -fd && git reset --hard"
+  ], 
+  "alias.ls": [
+    "log --stat -C"
+  ], 
+  "help.autocorrect": [
+    "1"
+  ], 
+  "difftool.sourcetree.cmd": [
+    "opendiff \"$LOCAL\" \"$REMOTE\""
+  ], 
+  "alias.busythisweek": [
+    "shortlog --since=one.week.ago"
+  ], 
+  "alias.listunstaged": [
+    "diff --name-status"
+  ], 
+  "alias.retag": [
+    "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+  ], 
+  "alias.remotes": [
+    "remote -v"
+  ], 
+  "alias.ft": [
+    "!f() { git describe --always --contains $1; }; f"
+  ], 
+  "alias.tags": [
+    "tag -l"
+  ], 
+  "alias.dm": [
+    "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  ], 
+  "alias.branches": [
+    "branch -a"
+  ], 
+  "alias.credit": [
+    "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+  ], 
+  "alias.di": [
+    "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+  ], 
+  "alias.liststaged": [
+    "diff --name-status --staged"
+  ], 
+  "alias.fb": [
+    "!f() { git branch -a --contains $1; }; f"
+  ], 
+  "alias.fc": [
+    "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+  ], 
+  "alias.lpo": [
+    "log --pretty=oneline --abbrev-commit --graph --decorate --all"
+  ], 
+  "filter.lfs.required": [
+    "true"
+  ], 
+  "alias.contributors": [
+    "shortlog --summary --numbered"
+  ]
+}

@@ -3,7 +3,7 @@
 # git pull origin master
 while read f; do
     echo "Backup file $f..."
-    cp -rf ~/$f ./
+    cp -rf ~/$f ./backup
 done < Dotfiles
 echo "Backup files done, please commit!"
 

@@ -1,0 +1,13 @@
+{
+  "generator-electron:1.20.0": {
+    "promptValues": {
+      "githubUsername": "thinhphan",
+      "website": "http://demo.com"
+    }
+  },
+  "@trails/generator-node:1.11.0": {
+    "promptValues": {
+      "authorUrl": "www.vincentphan.me"
+    }
+  }
+}

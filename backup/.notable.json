@@ -1,0 +1,17 @@
+{
+	"cwd": "/Users/thinhphan/Dropbox/Work/markdowns",
+	"monaco": {
+		"editorOptions": {
+			"minimap": {
+				"enabled": false
+			},
+			"wordWrap": "bounded"
+		}
+	},
+	"sorting": {
+		"by": "title",
+		"type": "ascending"
+	},
+	"theme": "dark",
+	"tutorial": true
+}

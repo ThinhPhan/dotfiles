@@ -1,0 +1,100 @@
+hello[6..-1]
+hello[6..-2]
+hello[2..-2]
+hello.split
+hello.sub("Wolrd", "ThinhPhan")
+hello.gsub("Wolrd", "ThinhPhan")
+hello.gsub("Wolrd","ThinhPhan")
+hello.gsub("Wolrd","ThinhPhan")!
+hello
+hello.gsub("World","ThinhPhan")
+hello + "Awesome"
+puts hello
+put hello
+puts "Show me what you got" + " .Okay #{hello}"
+puts "Show me what you got." + " Okay #{hello}"
+modifier = "very"
+mood = "excited"
+puts "I am #{modifier * 3 + mood} for today's class"
+"hello".methods
+:hello.methods.count
+:hello.methods
+hello.methods.count
+5.methods
+5.times do
+puts "Hello World"
+"this is a sentence".gsub("e")
+"this is a sentence".gsub("e","a")
+"this is a sentence".gsub("a"){ puts "Found a!"}
+5.times do |i|.
+puts "#{i} Hello".
+"this is a sentence".gsub("e"){ |letter| letter.upcase }.
+meals = ["Breakfast", "Lunch", "Dinner"].
+meals << "Dessert".
+meals[2].
+meals.last.
+meals.methods.
+meals.sort.
+meals.first.
+meals.shuffle.
+meals.each do { |meal| put "#{meal}"}.
+meals.each{ |meal| put "#{meal}"}.
+meals.each do
+|i| 
+meals.each do |i|
+puts "#{meals[i]}"
+end.
+meals.each do |item|
+puts "#{item}"
+meals.collect
+meals
+produce = {"apples" => 3, "oranges" => 1, "carrots" => 12}
+puts "There are @{produce['oranges'] oranges in the fridge.}"
+puts "There are #{produce['oranges'] oranges in the fridge.}".
+puts "There are #{produce['oranges'] oranges in the fridge.}
+puts "There are #{produce['oranges']} oranges in the fridge.
+produce
+puts "There are #{produce['oranges']} oranges in the fridge"
+puts "There are #{produce['oranges']} oranges in the fridge."
+produce = {apples: 3, oranges: 12, carrots: 5}
+produce["apples"]
+produce[:apples]
+puts "The water is not boiling yet."
+elseif minutes == 7
+puts "It's just barely boiling"
+elseif minutes == 8
+else
+puts "hot! hot hot"
+water_status(5)
+def water_status(minutes)
+if minutes < 7
+puts "the water is not boiling yet."
+elsif minutes == 7
+puts "it's just barely boiling"
+elsif minutes == 8
+puts "It's boiling"
+elsif 
+puts "Hot HOT"
+water_status(6)
+water_status(7)
+water_status(8)
+water_status(7.2)
+class Student
+attr_accessor :first_name, :last_name, :primary_phone_number
+def introduction
+puts "Hi, I'm #{first_name}"
+end
+open ex15_sample.txt
+open(ex15_sample.txt)
+txt = open(ex15_sample.txt)
+txt = open("ex15_sample.txt")
+print txt.read
+print txt
+exit
+require "./ex25.rb"
+sentence = "All good things come to those who wait."
+words = Ex25.break_words(sentence)
+words
+sorted_words = Ex25.sort_words(words)
+:w
+require "./ex26.rb"
