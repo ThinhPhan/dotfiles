@@ -39,9 +39,9 @@
 .wakatime.log
 .wget-hsts
 .yarnrc
-.yo-rc-global.json
 .zlogin
 .zsh_history
-.zsh-update
 .zshrc
-.zshrc-e
+.zsh_plugins.txt
+.zshenv
+

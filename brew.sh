@@ -11,26 +11,33 @@ apps=(
     findutils
     ack
     automake
-    brew-cask
     cmake
     mercurial
-    mysql
     openssl
+    brew-cask-completion
     imagemagick
     imagesnap
     git
     git-flow
-    gnu-sed --default-names
-    grep --default-names
-    node
+    gnu-sed
+    grep
     psgrep
-    python
     shellcheck
     ssh-copy-id
-    svn
     tree
-    vim --override-system-vi
-    wget --enable-iri
+    wget
+    zsh
+    getantibody/tap/antibody
+    tmux
+    nvm
 )
 
+# mackup - Save App configs into Dropbox and symlink it. Should to learn more.
+
 brew install "${apps[@]}"
+
+# Switch to zsh on Homebrew
+chsh -s /usr/local/bin/zsh
+
+# Install Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

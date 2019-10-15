@@ -2,30 +2,28 @@ apps=(
 
 # Browsers
 google-chrome
-# firefox
-# torbrowser
 
 # Communication
 slack
 skype
-viber
-# adium
+# viber
 
 # Cloud Storage
 dropbox
-google-drive
-evernote
+# google-drive
+# evernote
 
 # Supports
 teamviewer
+anydesk
 the-unarchiver
 skitch
-# sizeup
+sizeup
 
 # Media
-require_cask vlc
-require_cask vox
-require_cask vox-preferences-pane
+vlc
+vox
+vox-preferences-pane
 
 ###################################
 # Developer
@@ -33,21 +31,21 @@ require_cask vox-preferences-pane
 
 # Support Tools
 iterm2
-fabric
-tunnelblick
-flux
+## Fonts for Tools
+font-fira-code
+
+# tunnelblick
+# flux
 
 # Editors
 sublime-text
-atom
-require_apm linter
-require_apm linter-eslint
-require_apm atom-beautify
-mou
+# require_apm linter
+# require_apm linter-eslint
+# require_apm atom-beautify
+
 
 # Versioning
 gitx
-# sourcetree
 
 # Design
 # sketch
@@ -57,15 +55,28 @@ gitx
 staruml
 
 # Android Dev
-android-studio
-genymotion
-virtualbox
+# android-studio
+# genymotion
+# virtualbox
 
 # Database
-robomongo
+tableplus
+
+vagrant
 )
 
 brew cask install "${apps[@]}"
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package && qlmanage -r
+quicklook_exts=(
+    qlcolorcode
+    qlstephen
+    qlmarkdown
+    quicklook-json
+    qlprettypatch
+    quicklook-csv
+    betterzipql
+    webp-quicklook
+    suspicious-package
+)
+brew cask install quicklook_exts && qlmanage -r

@@ -139,25 +139,25 @@ require_nvm stable
 bot "NPM Globals..."
 ###############################################################################
 
-require_npm antic
-require_npm bower
+# require_npm antic
+# require_npm bower
 # http://ionicframework.com/
 # require_npm cordova
 # require_npm ionic
-require_npm yo
+# require_npm yo
 # https://github.com/markdalgleish/bespoke.js
-require_npm generator-bespoke
+# require_npm generator-bespoke
 # require_npm grunt
-require_npm gulp
-require_npm jshint
+# require_npm gulp
+# require_npm jshint
 # http://devo.ps/blog/goodbye-node-forever-hello-pm2/
 require_npm pm2
 require_npm prettyjson
 # require_npm supervisor
 # https://github.com/sindresorhus/trash
-require_npm trash
+# require_npm trash
 # https://github.com/MrRio/vtop
-require_npm vtop
+# require_npm vtop
 
 ###############################################################################
 bot "Ruby Gems..."
@@ -176,7 +176,7 @@ brew tap caskroom/versions > /dev/null 2>&1
 # cloud storage
 require_cask dropbox
 require_cask google-drive
-require_cask evernote
+# require_cask evernote
 
 # communication
 require_cask slack
