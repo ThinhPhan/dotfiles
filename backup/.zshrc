@@ -1,12 +1,8 @@
 # Path to your oh-my-zsh installation.o
-export ZSH=/Users/thinhphan/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="agnoster"
+# Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 ZSH_THEME="spaceship"
 
 # Default User
@@ -41,25 +37,22 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages git git-flow node npm brew osx zsh-autosuggestions zsh-wakatime zsh-syntax-highlighting docker docker-compose)
+# plugins=(colored-man-pages git git-flow node npm brew osx zsh-autosuggestions zsh-syntax-highlighting wakatime docker docker-compose)
+plugins=()
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
-
-# Add tmuxinator
-#source ~/.bin/tmuxinator.zsh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -83,59 +76,11 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+# Check in $ZSH_CUSTOM/aliases.zsh
+# Symlink from $DOTFILES/aliases.zsh
 
-# This alias reloads this file
-alias reload_profile='source ~/.profile'
-alias reload_zshrc='source ~/.zshrc'
-alias reload_bashrc='source ~/.bashrc'
-
-# clear zsh log
-alias clear_zsh_log='sudo rm -rf /private/var/log/asl/*.asl'
-
-# Mac get stuck very often and are extremely slow and unstable on shutdowns.
-# This forces a shutdown.
-alias poweroff='sudo /sbin/shutdown -h now'
-alias reboot='sudo /sbin/reboot'
-alias halt='sudo /sbin/halt'
-alias shutdown='sudo /sbin/shutdown'
-
-#########  System ##########
-# -p: make any parent dirs, -v: help find a typo
-alias mkdir="mkdir -pv"
-# -c: flag in order to continue the download in case of problems
-alias wget="wget -c"
-# handy shortcuts
-alias h='history'
-# -i: flag forces the user confirm before it happen if something wrong.
-alias rm="rm -i"
-alias cp="cp -i"
-# See most used commands in history
-alias tophistory="history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10"
-alias c='clear'
-
-#### Set of commands ###
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
-alias today='date +"%T %d-%m-%Y"'
-
-## Control output of networking
-alias ping='ping -c 10'
-alias fastping='ping -c 20 -s.2'
-
-# Show folder as tree or simple: brew install tree :)
-#alias treee="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
-alias tree="tree -AC"
-
-# Tmux
-alias opentmux="tmux a || tmux"
-
-#########  Developer ###########
-################################
+################################################################################
+#   Developer
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -148,9 +93,7 @@ export PATH="$HOME/.npm-packages/bin:$PATH"
 # Android SDK
 #export PATH="/Users/thinhphan/Library/Android/sdk/platform-tools:$PATH"
 
-# NodeJS
-
-# NVM - load, completion
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
@@ -191,16 +134,10 @@ if [ -f '/Users/thinhphan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 if [ -f '/Users/thinhphan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/thinhphan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 # <<< Google Cloud SDK <<<
 
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
-export PATH="/usr/local/opt/erlang@19/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
-export PATH="$PATH:~/.platformio/penv/bin"
-
+################################################################################
 ## SPACESHIP THEME CUSTOMIZE ##
 # https://denysdovhan.com/spaceship-prompt/docs/Options.html
-###############################
+
 # Prompt
 SPACESHIP_PROMPT_ADD_NEWLINE="true"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
@@ -212,3 +149,24 @@ SPACESHIP_CHAR_COLOR_SUCCESS="green"
 SPACESHIP_USER_SHOW="true"
 # <<< Spaceship Theme <<<
 
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="/usr/local/opt/erlang@19/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+export PATH="$PATH:~/.platformio/penv/bin"
+
+################################################################################
+# History
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+
+# Brew - autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Apply plugins
+source ~/.zsh_plugins.sh

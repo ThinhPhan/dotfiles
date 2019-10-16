@@ -31,7 +31,6 @@
 .profile
 .psql_history
 .putty
-.pylint.d
 .tmux.conf
 .vimrc
 .wakatime.cfg
@@ -44,4 +43,3 @@
 .zshrc
 .zsh_plugins.txt
 .zshenv
-

@@ -1,0 +1,31 @@
+# annotations are also allowed:
+robbyrussell/oh-my-zsh path:plugins/aws
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/git-flow
+robbyrussell/oh-my-zsh path:plugins/node
+robbyrussell/oh-my-zsh path:plugins/npm
+robbyrussell/oh-my-zsh path:plugins/brew
+robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+robbyrussell/oh-my-zsh path:plugins/fancy-ctrl-z
+
+desyncr/auto-ls
+gretzky/auto-color-ls
+b4b4r07/emoji-cli
+MichaelAquilina/zsh-auto-notify
+sobolevn/wakatime-zsh-plugin
+laggardkernel/zsh-thefuck
+paulirish/git-open
+
+# 
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+#zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
+
+
+# Themes
+denysdovhan/spaceship-prompt

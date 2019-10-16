@@ -1,4 +1,5 @@
 # iTerm2
+> A combination of all best stuff happens in iTerm - daily use tool of a Developer Life.
 
 Steps by steps
 
@@ -11,8 +12,16 @@ Steps by steps
 7. Enable `“ligature”` support so when you write an arrow =>;, it appears like a real arrow →
 
 ### Step 1 - iTerm2
+> A best Terminal Emulator on macOS. Wish it available on Windows too.
+
 ### Step 2 - ZSH
+> A best shell ever. Yay!
+
 ### Step 3 - Oh My ZSH
+> I used Oh-My-Zsh for a long time when I first bought a Macbook Pro 13 (Mid 2012).
+> I still happy with it until I install so many plugins cause slow startup Shell T-T.
+> I'm considering switch to `Presto`. Coming soon!.
+
 ### Step 4
 
 Clone this repo:
@@ -25,17 +34,20 @@ Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory:
 
 Set `ZSH_THEME="spaceship"` in your `.zshrc`.
 
-### Step 5
-### Step 6
+### Step 5 - Color Schemes
+
+
+### Step 6 - A lot of Plugins
 
 Use `Plugins Manager` for easy install, customize, setup plugins based on `Oh-my-Zsh Framework`
 
 - Plugins Magager: [Antibody - Antigen in Golang](https://github.com/getantibody/antibody)
 
 
-### Step 7
+### Step 7 - Um beatiful again
 
 ## References
+> Oh my gold-fish memory! So I put references here for later on.
 
 [](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
 [A comparison of all the ZSH plugin mangers I used](https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/)

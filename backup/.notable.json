@@ -1,5 +1,5 @@
 {
-	"cwd": "/Users/thinhphan/Dropbox/Work/markdowns",
+	"cwd": "/Users/stevenpham/Dropbox/Work/markdowns",
 	"monaco": {
 		"editorOptions": {
 			"minimap": {
@@ -13,5 +13,14 @@
 		"type": "ascending"
 	},
 	"theme": "dark",
-	"tutorial": true
+	"tutorial": true,
+	"Options": {
+		"editor": {
+			"lineNumbers": "off",
+			"minimap": {
+				"enabled": false
+			},
+			"scrollBeyondLastLine": true
+		}
+	}
 }

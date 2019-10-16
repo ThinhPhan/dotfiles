@@ -41,28 +41,84 @@ brew tap homebrew/bundle
 brew bundle install --file="$BREW_INSTALLS_FILE"
 brew upgrade --all && brew cleanup
 
-# Fonts
-brew tap homebrew/cask-fonts
-
-# iTerm
-# Install iterm via `brew cask`
-# Install plugins via `antibody` check `brew.sh`
-# Install Fonts -> `iTerm Profile`
-# Install Themes via `antibody` TODO: Not configure themes, color schemes yet.
-# Configurations - Plugins, Color Scheme, Themes, Settings, ...
-
 # Set up packages just installed via homebrew
-
-## vscode
-### install extensions
-while IFS= read -r line; do
-  code --install-extension "$line"
-done < "$VSCODE_EXTENSIONS_FILE"
-
-### import settings
-VSCODE_SETTINGS_FOLDER="$HOME/Library/Application Support/Code/User/"
-mkdir -p "$VSCODE_SETTINGS_FOLDER"
-mv "$DOTFILES_DIR/vscode_settings.json" "$VSCODE_SETTINGS_FOLDER/settings.json"
 
 # bootstrap my backup script
 "$DOTFILES_DIR/backup.sh"
+
+# *******************************************************************************
+
+# get current location
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+echo "running from $DIR..."
+
+# **********************************
+# GIT
+#
+
+# remove ~/.gitconfig
+if [ -f ~/.gitconfig ]; then
+  echo "found old ~/.gitconfig - removing..."
+  rm ~/.gitconfig
+fi
+
+# link ~/.gitconfig
+echo "sym linking new ~/.gitconfig with $DIR/.gitconfig!\n"
+ln -s $BACKUP_DIR/.gitconfig ~/.gitconfig
+
+# *********************************
+# zsh + Oh-my-Zsh
+#
+if [ -L ~/.zshrc ]; then
+  echo "found .zshrc - removing..."
+  rm ~/.zshrc
+fi
+
+echo $'linking .zshrc\n'
+ln -s $BACKUP_DIR/.zshrc ~/.zshrc
+
+# if [ -L $ZSH_CUSTOM/stefanjudis.zsh-theme ]; then
+#   echo "found old stefanjudis.zsh-theme - removing..."
+#   rm $ZSH_CUSTOM/stefanjudis.zsh-theme
+# fi
+
+# echo $'linking stefanjudis zsh-theme\n'
+# ln -s $BACKUP_DIR/stefanjudis.zsh-theme $ZSH_CUSTOM/stefanjudis.zsh-theme
+
+
+if [ -L $ZSH_CUSTOM/aliases.zsh ]; then
+  echo "found old aliases.zsh - removing..."
+  rm $ZSH_CUSTOM/aliases.zsh
+fi
+
+echo $'linking aliases.zsh\n'
+ln -s $DIR/aliases.zsh $ZSH_CUSTOM/aliases.zsh
+
+if [ -L $ZSH_CUSTOM/functions.zsh ]; then
+  echo "found old functions.zsh - removing..."
+  rm $ZSH_CUSTOM/functions.zsh
+fi
+
+echo $'linking functions.zsh\n'
+ln -s $DIR/functions.zsh $ZSH_CUSTOM/functions.zsh
+
+
+# *************************************
+# npm
+#
+# if [ -L ~/.npmrc ]; then
+#   echo "found old .npmrc - removing..."
+#   rm ~/.npmrc
+# fi
+
+# echo $'linking .npmrc\n'
+# ln -s $DIR/.npmrc ~/.npmrc
+
+
+bash $DIR/brew.sh
+bash $DIR/brew_cask.sh
+bash $DIR/mac.sh
+bash $DIR/node.sh
+bash $DIR/vim.sh
+bash $DIR/vscode.sh

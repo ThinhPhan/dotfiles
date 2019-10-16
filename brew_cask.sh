@@ -1,68 +1,107 @@
+#!/usr/bin/env sh
+
+echo ""
+echo "#############################"
+echo "# Installing applications via cask from cask.sh"
+echo "#############################"
+echo ""
+
+# get current location
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+# *********************************
+# Clean up
+brew cask uninstall --force visual-studio-code
+
+# *********************************
+# Install Prerequisites
+brew tap caskroom/fonts
+
+# *********************************
+# Install Apps
 apps=(
+    # Browsers
+    google-chrome
 
-# Browsers
-google-chrome
+    # Communication
+    slack
+    skype
+    telegram-desktop
+    viber
 
-# Communication
-slack
-skype
-# viber
+    # Cloud Storage
+    dropbox
+    # google-drive
+    # evernote
 
-# Cloud Storage
-dropbox
-# google-drive
-# evernote
+    # Supports
+    teamviewer
+    anydesk
+    skitch
+    sizeup
 
-# Supports
-teamviewer
-anydesk
-the-unarchiver
-skitch
-sizeup
+    # Media
+    vlc
+    vox
+    vox-preferences-pane
+    spotify
 
-# Media
-vlc
-vox
-vox-preferences-pane
+    ###################################
+    # Developer
 
-###################################
-# Developer
-###################################
+    # Support Tools
+    iterm2
+    tunnelblick
+    ngrok
+    adoptopenjdk
+    # flux
 
-# Support Tools
-iterm2
-## Fonts for Tools
-font-fira-code
+    ## Fonts for Tools
+    font-fira-code
 
-# tunnelblick
-# flux
+    # Editors
+    sublime-text
+    visual-studio-code
+    postman
+    macdown
+    pycharm-ce
+    arduino
+    insomnia
+    typora
 
-# Editors
-sublime-text
-# require_apm linter
-# require_apm linter-eslint
-# require_apm atom-beautify
+    # Versioning
+    gitx
 
+    # Design & Media
+    sketch
+    sketchup
+    skitch
+    handbrake
+    imageoptim
+    blender
 
-# Versioning
-gitx
+    # UML
+    staruml
 
-# Design
-# sketch
-# sketchup
+    # Database
+    tableplus
+    dbeaver
+    graphql-playground
 
-# UML
-staruml
+    # microservices
+    docker
+    minikube
+    vagrant
 
-# Android Dev
-# android-studio
-# genymotion
-# virtualbox
-
-# Database
-tableplus
-
-vagrant
+    # Ultility
+    alfred
+    balenaetcher
+    cheatsheet
+    keka
+    # NTFS on Mac for free https://mounty.app/
+    mounty
+    the-unarchiver
+    hammerspoon
 )
 
 brew cask install "${apps[@]}"
@@ -70,13 +109,14 @@ brew cask install "${apps[@]}"
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 quicklook_exts=(
     qlcolorcode
-    qlstephen
+    qlimagesize
     qlmarkdown
-    quicklook-json
     qlprettypatch
+    qlstephen
+    qlvideo
     quicklook-csv
-    betterzipql
-    webp-quicklook
+    quicklook-json
     suspicious-package
+    webpquicklook
 )
-brew cask install quicklook_exts && qlmanage -r
+brew cask install "${quicklook_exts[@]}" && qlmanage -r
